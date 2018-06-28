@@ -2,7 +2,7 @@
   <flex blocked class="menu-title" overflow="hide" :class="{closed:closed,show:show}">
     <flex class="icon" v-if="icon || src" align="center" valign="middle">
       <Icon :type="icon" class="menu-icon" v-if="icon"></Icon>
-      <Avatar :src="src" v-else></Avatar>
+      <Avatar :src="src" :shape="shape" v-else></Avatar>
     </flex>
     <transition name="fade">
       <flex :span="1" fulled valign="middle" v-if="!closed || show" class="menu-title-content"><slot></slot></flex>
@@ -17,11 +17,15 @@
       icon: String,
       animate: Boolean,
       src: String,
-      show: Boolean
+      show: Boolean,
+      radius: Boolean
     },
     computed: {
       closed() {
         return this.$store.state.menu.closed;
+      },
+      shape() {
+        return this.radius ? 'circle' : 'square';
       }
     }
   }

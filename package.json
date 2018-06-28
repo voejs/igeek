@@ -37,7 +37,7 @@
     "build": "NODE_ENV=production node_modules/.bin/webpack --config=build/webpack.production.js -p --progress --hide-modules"
   },
   "dependencies": {
-    "@voejs/voe": "^1.0.13",
+    "@voejs/voe": "^1.0.16",
     "iview": "^2.14.3",
     "normalize.css": "^8.0.0"
   }

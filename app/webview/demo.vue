@@ -1,5 +1,7 @@
 <template>
-  <div>{{text}}</div>
+  <div>{{text}}
+    <p>{{$store.state.system.request.path}}: {{$store.state.system.request.query}}</p>
+  </div>
 </template>
 
 <script>

@@ -2,14 +2,14 @@
   <flex blocked fulled class="page">
     <flex class="sidebar" :class="{close: $store.state.menu.closed}" direction="column" fulled>
       <div class="logo" v-redirect="'/'">
-        <menu-title icon="social-chrome-outline">iGeek</menu-title>
+        <menu-title :src="logo">Voe - iGeek Demo</menu-title>
       </div>
       <flex :span="1" overflow="auto" blocked class="center" direction="column">
-        <div class="title">系统导航</div>
+        <menu-tip>系统导航</menu-tip>
         <menu-group :data-source="$store.state.menu.navigate"></menu-group>
-        <div class="title">系统导航</div>
+        <menu-tip>系统导航</menu-tip>
         <menu-group :data-source="$store.state.menu.navigate"></menu-group>
-        <div class="title">系统导航</div>
+        <menu-tip>系统导航</menu-tip>
         <menu-group :data-source="$store.state.menu.navigate"></menu-group>
       </flex>
       <div class="bottom">
@@ -32,6 +32,9 @@
   export default {
     name: "app-main",
     computed: {
+      logo() {
+        return 'https://51nbimg.u51.com/cadcd461b4c848568769ab22abacc738.png';
+      },
       closed() {
         return this.$store.state.menu.closed;
       }

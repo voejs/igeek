@@ -4,16 +4,19 @@ export default {
     {
       icon: 'android-options',
       name: '图书管理',
-      link: '/'
+      link: '/',
+      id: 'book'
     },
     {
       icon: 'social-css3-outline',
       name: '库存案件',
+      id: 'case',
       children: [
         {
           icon: 'star',
           name: '首催',
-          link: '/'
+          link: '/',
+          id: 'a'
         },
         {
           icon: 'star',
