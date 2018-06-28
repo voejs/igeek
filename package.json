@@ -1,0 +1,44 @@
+{
+  "name": "@voejs/template",
+  "version": "1.0.0",
+  "description": "template of voe.js",
+  "author": "evio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:voejs/template.git"
+  },
+  "devDependencies": {
+    "@voejs/runtime": "^1.0.1",
+    "autoprefixer": "^8.6.4",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "postcss-loader": "^2.1.5",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.3"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config=build/webpack.development.js --progress",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config=build/webpack.production.js -p --progress --hide-modules"
+  },
+  "dependencies": {
+    "@voejs/voe": "^1.0.13",
+    "iview": "^2.14.3",
+    "normalize.css": "^8.0.0"
+  }
+}

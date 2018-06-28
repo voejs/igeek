@@ -1,0 +1,115 @@
+@import "~normalize.css";
+@import "~iview/dist/styles/iview.css";
+@import "./var";
+
+html,body{
+  font-family: @font;
+  font-size: @font-size;
+  height: 100%;
+  width: 100%;
+  color: @default-color;
+  background-color: #fff;
+  .page{
+    .sidebar{
+      width: 230px;
+      transition: all .3s ease;
+      border-right:1px solid #eee;
+      ul,li{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      li:hover{
+        & > .menu-title{
+          background-color: #f9f9f9;
+        }
+      }
+      .logo{
+        font-weight: bold;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      .center{
+        overflow: visible;
+        .title{
+          padding: 15px 20px;
+          color:#999;
+          font-weight: bold;
+        }
+        & > ul > li {
+          position: relative;
+          ul{
+            position: absolute;
+            width: 230px;
+            top:0;
+            left:100%;
+            display: none;
+            background-color: #fff;
+            border:1px solid #eee;
+            li{
+              position: relative;
+              ul{
+                display: none;
+              }
+              &:hover{
+                & > ul{
+                  display: block;
+                }
+              }
+            }
+          }
+          &:hover{
+            & > ul{
+              display: block;
+            }
+          }
+        }
+      }
+      .bottom{
+        width: 100%;
+        position: relative;
+        padding: 15px 0;
+        background-color: #f9f9f9;
+      }
+      &.close{
+        width: @sidebar-width;
+        background-color: #f6f9fa;
+        .center{
+          & > ul > li{
+            margin-bottom: 10px;
+          }
+          .title{
+            height: 1px;
+            overflow: hidden;
+            width: 100%;
+            font-size: 0;
+            background-color: #eee;
+            padding: 0;
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+    .container{
+      background-color: #fafafa;
+      .topbar{
+        height: 45px;
+        background-color: rgb(96, 79, 144);
+        color: hsla(0,0%,100%,.7);
+        padding: 0 20px;
+        .toggle{
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .left,.right{
+          font-size: 14px;
+        }
+      }
+      .bread{
+        padding: 10px 20px;
+        background-color: #F0EFF4;
+      }
+    }
+  }
+}
