@@ -14,15 +14,9 @@ html,body{
       width: 230px;
       transition: all .3s ease;
       border-right:1px solid #eee;
-      ul,li{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-      }
       li:hover{
         & > .menu-title{
-          background-color: #f9f9f9;
+          background-color: #F0EFF4;
         }
       }
       .logo{
@@ -37,6 +31,12 @@ html,body{
           color:#999;
           font-weight: bold;
         }
+        ul,li{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+        }
         & > ul > li {
           position: relative;
           ul{
@@ -46,7 +46,7 @@ html,body{
             left:100%;
             display: none;
             background-color: #fff;
-            border:1px solid #eee;
+            border:1px solid #C5BFD6;
             li{
               position: relative;
               ul{
@@ -105,10 +105,32 @@ html,body{
         .left,.right{
           font-size: 14px;
         }
-      }
-      .bread{
-        padding: 10px 20px;
-        background-color: #F0EFF4;
+        .right{
+          i.item{
+            margin-left: 30px;
+            font-size: 18px;
+            cursor: pointer;
+          }
+        }
+        .bread{
+          color:#fff;
+          margin-left: 20px;
+          a{
+            color: hsla(0,0%,100%,.7);
+            &:link,&:visited{
+              color: hsla(0,0%,100%,.7);
+            }
+            &:hover{
+              color:#7C6FA4;
+            }
+          }
+          span{
+            color: hsla(0,0%,100%,.7);
+          }
+          a,span{
+            cursor: pointer;
+          }
+        }
       }
     }
   }

@@ -33,6 +33,11 @@
   height: @height;
   font-size: 14px;
   cursor: pointer;
+  border-left: 2px solid transparent;
+  transition:all .3s ease;
+  &.selected{
+    border-color:#f56c6b
+  }
   .icon{
     padding: 0 8px 0 20px;
     width: 60px;
@@ -57,6 +62,25 @@
     .icon{
       i.menu-icon{
         background-color: #eee;
+      }
+    }
+  }
+  &.show{
+    font-size: 12px;
+    .icon{
+      padding: 0 8px 0 6px;
+      width: 36px;
+      height: @height;
+      font-size: 16px;
+      i.menu-icon{
+        display: inline-block;
+        width: 20px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        border-radius: 100%;
+        background-color: transparent;
+        transition:all .3s ease;
       }
     }
   }
