@@ -19,7 +19,12 @@
 
 <script>
   export default {
-    name: "top-bar"
+    name: "top-bar",
+    methods: {
+      toggle() {
+        this.$store.menu.commit('closed', !this.$store.state.menu.closed);
+      }
+    }
   }
 </script>
 

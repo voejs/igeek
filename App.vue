@@ -31,11 +31,6 @@
   Vue.use(iView);
   export default {
     name: "app-main",
-    methods: {
-      toggle() {
-        this.$store.menu.commit('closed', !this.closed);
-      }
-    },
     computed: {
       closed() {
         return this.$store.state.menu.closed;
