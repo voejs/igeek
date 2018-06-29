@@ -3,7 +3,7 @@ import MenuGroup from './group.vue';
 export default {
   name: 'menu-list',
   render() {
-    const nav = this.$store.menu.get('navArray');
+    const nav = this.$store.main.get('navArray');
     const result = [];
     for (let i = 0, j = nav.length; i < j; i++) {
       const item = nav[i];

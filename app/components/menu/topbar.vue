@@ -20,13 +20,13 @@
     name: "top-bar",
     methods: {
       toggle() {
-        this.$store.menu.commit('closed', !this.$store.state.menu.closed);
+        this.$store.main.commit('closed', !this.$store.state.main.closed);
       }
     },
     computed: {
       breads() {
-        const map = this.$store.menu.get('navMap');
-        const current = this.$store.menu.get('current');
+        const map = this.$store.main.get('navMap');
+        const current = this.$store.main.get('current');
         if (!current) return [];
         const result = [];
         const steps = current.split(':');

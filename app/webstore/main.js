@@ -1,10 +1,12 @@
 import { ChildVuex } from 'super-vuex';
 
 export default app => {
-  const child = new ChildVuex('menu');
+  const child = new ChildVuex('main');
   child.setState({
     closed: false,
     current: null,
+    title: app.config.title,
+    description: app.config.description,
     nav: [
       {
         label: '模板演示',

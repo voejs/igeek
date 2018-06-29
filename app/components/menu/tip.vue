@@ -1,9 +1,14 @@
 <template>
-  <div class="title"><slot></slot></div>
+  <leg-head :show="!closed" placement="center"><slot></slot></leg-head>
 </template>
 
 <script>
   export default {
-    name: "menu-tip"
+    name: "menu-tip",
+    computed: {
+      closed() {
+        return this.$store.state.main.closed;
+      }
+    }
   }
 </script>

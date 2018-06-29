@@ -23,14 +23,14 @@
     },
     computed: {
       closed() {
-        return this.$store.state.menu.closed;
+        return this.$store.state.main.closed;
       },
       shape() {
         return this.radius ? 'circle' : 'square';
       },
       selected() {
-        return this.idPath && this.$store.state.menu.current
-          ? this.$store.state.menu.current.indexOf(this.idPath) > -1
+        return this.idPath && this.$store.state.main.current
+          ? this.$store.state.main.current.indexOf(this.idPath) > -1
           : false;
       }
     }

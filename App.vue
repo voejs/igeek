@@ -2,7 +2,12 @@
   <flex blocked fulled class="page">
     <flex class="sidebar" :class="{close: closed}" direction="column" fulled>
       <div class="logo" v-redirect="'/'">
-        <menu-title :src="logo">Voe - iGeek Demo</menu-title>
+        <menu-title :src="logo">
+          <flex blocked fulled direction="column">
+            <flex class="name">{{$store.state.main.title}}</flex>
+            <flex class="desc">{{$store.state.main.description}}</flex>
+          </flex>
+        </menu-title>
       </div>
       <flex :span="1" overflow="auto" blocked class="center" direction="column">
         <menu-list></menu-list>
@@ -31,7 +36,7 @@
         return 'https://51nbimg.u51.com/cadcd461b4c848568769ab22abacc738.png';
       },
       closed() {
-        return this.$store.state.menu.closed;
+        return this.$store.state.main.closed;
       }
     }
   }
