@@ -34,7 +34,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../docs'),
     filename: 'app.[hash:10].js'
   },
   resolve: {
