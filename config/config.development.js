@@ -2,60 +2,28 @@ export default {
   popState: false,
   navigate: [
     {
-      icon: 'android-options',
-      name: '图书管理',
+      icon: 'earth',
+      name: 'iGeek',
       link: '/',
-      id: 'book'
+      id: 'index'
     },
     {
-      icon: 'social-css3-outline',
-      name: '库存案件',
-      id: 'case',
+      icon: 'bug',
+      name: '动画切换',
+      id: 'animate',
       children: [
         {
-          icon: 'star',
-          name: '首催',
-          link: '/',
-          id: 'a'
+          icon: 'log-in',
+          name: '进入场景',
+          link: '/demo/in',
+          id: 'in'
         },
         {
-          icon: 'star',
-          name: '首催不通',
-          children: [
-            {
-              icon: 'star',
-              name: '图书管理2',
-              link: '/'
-            },
-            {
-              icon: 'star',
-              name: '图书管理3',
-              children: [
-                {
-                  icon: 'star',
-                  name: '图书管理2',
-                  link: '/'
-                },
-                {
-                  icon: 'star',
-                  name: '图书管理3',
-                  children: [
-                    {
-                      icon: 'star',
-                      name: '图书管理2',
-                      link: '/'
-                    },
-                    {
-                      icon: 'star',
-                      name: '图书管理3',
-                      link: '/'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+          icon: 'log-out',
+          name: '退出场景',
+          link: '/demo/out',
+          id: 'out'
+        },
       ]
     }
   ]

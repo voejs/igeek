@@ -1,5 +1,5 @@
 <template>
-  <flex blocked class="menu-title" overflow="hide" :class="{closed:closed,show:show}">
+  <flex blocked class="menu-title" overflow="hide" :class="{ closed:closed, show: show, selected: selected }">
     <flex class="icon" v-if="icon || src" align="center" valign="middle">
       <Icon :type="icon" class="menu-icon" v-if="icon"></Icon>
       <Avatar :src="src" :shape="shape" v-else></Avatar>
@@ -18,7 +18,8 @@
       animate: Boolean,
       src: String,
       show: Boolean,
-      radius: Boolean
+      radius: Boolean,
+      idPath: String
     },
     computed: {
       closed() {
@@ -26,6 +27,11 @@
       },
       shape() {
         return this.radius ? 'circle' : 'square';
+      },
+      selected() {
+        return this.idPath && this.$store.state.menu.current
+          ? this.$store.state.menu.current.indexOf(this.idPath) > -1
+          : false;
       }
     }
   }
@@ -39,9 +45,6 @@
   cursor: pointer;
   border-left: 2px solid transparent;
   transition:all .3s ease;
-  &.selected{
-    border-color:#f56c6b
-  }
   .icon{
     padding: 0 8px 0 20px;
     width: 60px;
@@ -85,6 +88,33 @@
         border-radius: 100%;
         background-color: transparent;
         transition:all .3s ease;
+      }
+    }
+  }
+  &.selected{
+    border-color:#f56c6b;
+    &.closed{
+      border-color:transparent;
+      background-color: rgba(245,108,107, .1);
+      .icon i.menu-icon{
+        background-color: transparent;
+        color:#C95958;
+      }
+      &.show{
+        border-color:#f56c6b;
+        background-color: #fff;
+        &:hover{
+          background-color: rgba(245,108,107, .1)
+        }
+        .icon i.menu-icon{
+          background-color: transparent;
+          color:#333;
+        }
+      }
+      &:hover{
+        .icon i.menu-icon{
+          color:#C95958;
+        }
       }
     }
   }

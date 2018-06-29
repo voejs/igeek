@@ -16,7 +16,7 @@ html,body{
       border-right:1px solid #eee;
       li:hover{
         & > .menu-title{
-          background-color: #F0EFF4;
+          background-color: rgba(245,108,107, .1);
         }
       }
       .logo{
@@ -31,7 +31,9 @@ html,body{
           padding: 15px 20px;
           color:#999;
           font-weight: bold;
-          transition:all .3s ease;
+          //transition:all .3s ease;
+          height: 48px;
+          width: 229px;
         }
         ul,li{
           list-style: none;
@@ -39,7 +41,10 @@ html,body{
           margin: 0;
           width: 100%;
         }
-        & > ul > li {
+        &>div{
+          width: 100%;
+        }
+        & > div > ul > li {
           position: relative;
           ul{
             position: absolute;
@@ -83,13 +88,10 @@ html,body{
             margin-bottom: 10px;
           }
           .title{
-            height: 1px;
             overflow: hidden;
-            width: 100%;
-            font-size: 0;
-            background-color: #eee;
-            padding: 0;
-            margin: 10px 0;
+            width: 229px;
+            opacity: 0;
+            height: 48px;
           }
         }
       }
@@ -98,7 +100,7 @@ html,body{
       background-color: #fafafa;
       .topbar{
         height: 45px;
-        background-color: rgb(96, 79, 144);
+        background-color: #C95958;
         color: hsla(0,0%,100%,.7);
         padding: 0 20px;
         .toggle{

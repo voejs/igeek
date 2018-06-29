@@ -1,18 +1,56 @@
 <template>
-  <div>{{text}}
-    <p>{{$store.state.system.request.path}}: {{$store.state.system.request.query}}</p>
+  <div class="page-demo">
+    <transition name="slide-fade" appear>
+      <div class="box" v-if="$store.state.demo.mode===1">1</div>
+    </transition>
+    <transition name="slide-fade2" appear>
+      <div class="box" v-if="$store.state.demo.mode===2">2</div>
+    </transition>
   </div>
 </template>
 
 <script>
   export default {
-    name: "demo",
-    props: {
-      text: String
-    }
+    name: "demo"
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  .page-demo{
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    .box{
+      display: inline-block;
+      background-color: #D2F898;
+      width: 100px;
+      height: 100px;
+      color:#fff;
+      text-align: center;
+      line-height: 100px;
+    }
+  }
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s ease;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(500px);
+    opacity: 0;
+  }
 
+  .slide-fade2-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade2-leave-active {
+    transition: all .8s ease;
+  }
+  .slide-fade2-enter, .slide-fade2-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
 </style>

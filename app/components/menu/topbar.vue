@@ -3,9 +3,7 @@
     <flex class="left" valign="middle" fulled>
       <Icon type="navicon-round" class="toggle" @click.native="toggle"></Icon>
       <Breadcrumb class="bread">
-        <BreadcrumbItem v-redirect="'/'">iGeek</BreadcrumbItem>
-        <BreadcrumbItem v-redirect="'/'">Components</BreadcrumbItem>
-        <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+        <BreadcrumbItem v-redirect="item.link" v-for="item in breads" :key="item.idPath">{{item.name}}</BreadcrumbItem>
       </Breadcrumb>
     </flex>
     <flex class="right">
@@ -23,6 +21,24 @@
     methods: {
       toggle() {
         this.$store.menu.commit('closed', !this.$store.state.menu.closed);
+      }
+    },
+    computed: {
+      breads() {
+        const map = this.$store.menu.get('navMap');
+        const current = this.$store.menu.get('current');
+        if (!current) return [];
+        const result = [];
+        const steps = current.split(':');
+        let path = [];
+        for (let i = 0; i < steps.length; i++) {
+          path.push(steps[i]);
+          const name = path.join(':');
+          if (map[name]) {
+            result.push(map[name]);
+          }
+        }
+        return result;
       }
     }
   }

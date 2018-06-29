@@ -1,5 +1,5 @@
 <template>
-  <div class="title">系统导航</div>
+  <div class="title"><slot></slot></div>
 </template>
 
 <script>

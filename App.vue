@@ -1,16 +1,11 @@
 <template>
   <flex blocked fulled class="page">
-    <flex class="sidebar" :class="{close: $store.state.menu.closed}" direction="column" fulled>
+    <flex class="sidebar" :class="{close: closed}" direction="column" fulled>
       <div class="logo" v-redirect="'/'">
         <menu-title :src="logo">Voe - iGeek Demo</menu-title>
       </div>
       <flex :span="1" overflow="auto" blocked class="center" direction="column">
-        <menu-tip>系统导航</menu-tip>
-        <menu-group :data-source="$store.state.menu.navigate"></menu-group>
-        <menu-tip>系统导航</menu-tip>
-        <menu-group :data-source="$store.state.menu.navigate"></menu-group>
-        <menu-tip>系统导航</menu-tip>
-        <menu-group :data-source="$store.state.menu.navigate"></menu-group>
+        <menu-list></menu-list>
       </flex>
       <div class="bottom">
         <menu-bottom></menu-bottom>
