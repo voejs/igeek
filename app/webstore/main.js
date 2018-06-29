@@ -1,9 +1,10 @@
 import { ChildVuex } from 'super-vuex';
 
 export default app => {
+  const toggleName = 'iGeek:' + app.config.name + ':toggle';
   const child = new ChildVuex('main');
   child.setState({
-    closed: false,
+    closed: !!Number(global.localStorage.getItem(toggleName)),
     current: null,
     title: app.config.title,
     description: app.config.description,
@@ -13,6 +14,11 @@ export default app => {
         data: app.config.navigate
       }
     ]
+  });
+  
+  child.setCommit('toggle', (state, data) => {
+    state.closed = data;
+    global.localStorage.setItem(toggleName, Number(data));
   });
   
   child.setGetter('navArray', state => {

@@ -1,4 +1,5 @@
 export default {
+  name: 'demo',
   popState: false,
   title: 'Voe - iGeek Demo',
   description: '一套基于Voejs的演示模板',

@@ -20,7 +20,7 @@
     name: "top-bar",
     methods: {
       toggle() {
-        this.$store.main.commit('closed', !this.$store.state.main.closed);
+        this.$store.main.commit('toggle', !this.$store.state.main.closed);
       }
     },
     computed: {
