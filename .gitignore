@@ -9,4 +9,3 @@ perf
 *.map
 npm-debug.log
 .voecache.js
-dist
