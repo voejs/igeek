@@ -22,7 +22,7 @@
     text-align: center;
     .box{
       display: inline-block;
-      background-color: #D2F898;
+      background-color: #58A4B0;
       width: 100px;
       height: 100px;
       color:#fff;

@@ -37,6 +37,7 @@
   .email{
     color:gray;
     font-size: 12px;
+    font-weight: normal;
   }
 }
 </style>

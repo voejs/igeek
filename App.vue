@@ -2,7 +2,7 @@
   <flex blocked fulled class="page">
     <flex class="sidebar" :class="{close: closed}" direction="column" fulled>
       <div class="logo" v-redirect="'/'">
-        <menu-title :src="logo">
+        <menu-title icon="social-chrome-outline">
           <flex blocked fulled direction="column">
             <flex class="name">{{$store.state.main.title}}</flex>
             <flex class="desc">{{$store.state.main.description}}</flex>
@@ -32,9 +32,6 @@
   export default {
     name: "app-main",
     computed: {
-      logo() {
-        return 'https://51nbimg.u51.com/cadcd461b4c848568769ab22abacc738.png';
-      },
       closed() {
         return this.$store.state.main.closed;
       }

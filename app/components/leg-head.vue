@@ -11,10 +11,6 @@
     name: "leg-head",
     props: {
       show: Boolean,
-      backgroundColor: {
-        type: String,
-        default: '#FFFFFF'
-      },
       placement: {
         type: String,
         default: 'left'

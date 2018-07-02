@@ -38,6 +38,7 @@
 </script>
 
 <style lang="less" scoped>
+@import "../../extend/var";
 @height:45px;
 .menu-title{
   height: @height;
@@ -68,7 +69,7 @@
   &.closed{
     .icon{
       i.menu-icon{
-        background-color: #eee;
+        background-color: @sidebar-border-color-rgba;
       }
     }
   }
@@ -92,28 +93,29 @@
     }
   }
   &.selected{
-    border-color:#f56c6b;
+    border-color:@sidebar-border-color;
+    color:@sidebar-border-color;
     &.closed{
       border-color:transparent;
-      background-color: rgba(245,108,107, .1);
+      background-color: @sidebar-border-color-rgba;
       .icon i.menu-icon{
-        background-color: transparent;
-        color:#C95958;
+        background-color: @sidebar-border-color-rgba;
+        color:@sidebar-border-color;
       }
       &.show{
-        border-color:#f56c6b;
-        background-color: #fff;
+        border-color:@sidebar-border-color;
+        background-color: @sidebar-border-color-rgba;
         &:hover{
-          background-color: rgba(245,108,107, .1)
+          background-color: @sidebar-border-color-rgba;
         }
         .icon i.menu-icon{
           background-color: transparent;
-          color:#333;
+          color:@sidebar-border-color;
         }
       }
       &:hover{
         .icon i.menu-icon{
-          color:#C95958;
+          color:@sidebar-border-color;
         }
       }
     }

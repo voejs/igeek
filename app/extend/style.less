@@ -9,24 +9,53 @@ html,body{
   width: 100%;
   color: @default-color;
   background-color: #fff;
+  a{
+    transition:all .3s ease;
+    &:link,&:visited{
+      color:@sidebar-border-color;
+    }
+    &:hover{
+      color:#417881;
+    }
+  }
+  
   .page{
     .sidebar{
-      width: 230px;
+      width: @sidebar-max-width;
       transition: all .3s ease;
-      border-right:1px solid #eee;
+      //border-right:1px solid #eee;
+      background-color: @sidebar-bgcolor;
       li:hover{
         & > .menu-title{
-          background-color: rgba(245,108,107, .1);
+          background-color: @sidebar-border-color-rgba;
         }
       }
-      .logo{
+      .logo, .userinfo{
         font-weight: bold;
         width: 100%;
         margin-top: 15px;
+        .name{
+          color:@color-lightest;
+        }
         .desc{
           font-weight: normal;
-          color:#999;
+          color:@sidebar-color;
           font-size: 12px;
+        }
+        .menu-title{
+          .icon{
+            i{
+              font-size: 30px;
+              color:#58A4B0;
+            }
+          }
+          &.closed{
+            .icon{
+              i.menu-icon{
+                background-color: transparent;
+              }
+            }
+          }
         }
       }
       .center{
@@ -34,11 +63,21 @@ html,body{
         .leg-head-text{
           color:#999;
         }
+        .leg-head{
+          &:before{
+            background-color: @sidebar-bgcolor-rgba;
+          }
+          .leg-head-text{
+            background-color: @sidebar-bgcolor;
+            color:@sidebar-color-light;
+          }
+        }
         ul,li{
           list-style: none;
           padding: 0;
           margin: 0;
           width: 100%;
+          color:@sidebar-color;
         }
         &>div{
           width: 100%;
@@ -77,11 +116,11 @@ html,body{
         width: 100%;
         position: relative;
         padding: 15px 0;
-        background-color: #f9f9f9;
+        //background-color: #f9f9f9;
       }
       &.close{
         width: @sidebar-width;
-        background-color: #f6f9fa;
+        background-color: @sidebar-bgcolor;
         .center{
           & > ul > li{
             margin-bottom: 10px;
@@ -91,45 +130,6 @@ html,body{
     }
     .container{
       background-color: #fafafa;
-      .topbar{
-        height: 45px;
-        background-color: #C95958;
-        color: hsla(0,0%,100%,.7);
-        padding: 0 20px;
-        .toggle{
-          font-size: 20px;
-          cursor: pointer;
-        }
-        .left,.right{
-          font-size: 14px;
-        }
-        .right{
-          i.item{
-            margin-left: 30px;
-            font-size: 18px;
-            cursor: pointer;
-          }
-        }
-        .bread{
-          color:#fff;
-          margin-left: 20px;
-          a{
-            color: hsla(0,0%,100%,.7);
-            &:link,&:visited{
-              color: hsla(0,0%,100%,.7);
-            }
-            &:hover{
-              color:#7C6FA4;
-            }
-          }
-          span{
-            color: hsla(0,0%,100%,.7);
-          }
-          a,span{
-            cursor: pointer;
-          }
-        }
-      }
     }
   }
 }
