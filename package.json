@@ -34,12 +34,14 @@
   },
   "scripts": {
     "dev": "rm -rf .voecache.js && NODE_ENV=development node_modules/.bin/webpack-dev-server --config=build/webpack.development.js --progress",
-    "build": "rm -rf .voecache.js && rm -rf docs/ && NODE_ENV=production node_modules/.bin/webpack --config=build/webpack.production.js -p --progress --hide-modules"
+    "build": "rm -rf .voecache.js && rm -rf docs/ && NODE_ENV=production node_modules/.bin/webpack --config=build/webpack.production.js -p --progress --hide-modules",
+    "git": "git add . && git commit -am 'update' && git push"
   },
   "dependencies": {
     "@voejs/voe": "^1.0.17",
+    "animate.css": "^3.6.1",
     "iview": "^2.14.3",
     "normalize.css": "^8.0.0",
-    "animate.css": "^3.6.1"
+    "velocity-animate": "^1.5.1"
   }
 }

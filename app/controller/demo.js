@@ -20,10 +20,12 @@ export default class DemoController extends Controller {
   }
   
   inGroup() {
-    this.store.demo.commit('gmode', 1);
+    this.store.demo.commit('list1', this.store.state.demo.list);
+    this.store.demo.commit('list2', []);
   }
   
   outGroup() {
-    this.store.demo.commit('gmode', 2);
+    this.store.demo.commit('list2', this.store.state.demo.list);
+    this.store.demo.commit('list1', []);
   }
 }
