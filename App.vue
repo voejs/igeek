@@ -29,9 +29,9 @@
   import Vue from 'vue';
   import iView from 'iview';
   import 'animate.css';
-  import AnimationGroup from './animation-group/index';
+  import Animation from '@voejs/animate';
   Vue.use(iView);
-  Vue.component('animation-group', AnimationGroup);
+  Vue.use(Animation);
   export default {
     name: "app-main",
     computed: {

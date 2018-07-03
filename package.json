@@ -38,10 +38,10 @@
     "git": "git add . && git commit -am 'update' && git push"
   },
   "dependencies": {
+    "@voejs/animate": "^1.0.0",
     "@voejs/voe": "^1.0.17",
     "animate.css": "^3.6.1",
     "iview": "^2.14.3",
-    "normalize.css": "^8.0.0",
-    "velocity-animate": "^1.5.1"
+    "normalize.css": "^8.0.0"
   }
 }

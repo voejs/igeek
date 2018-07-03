@@ -6,18 +6,22 @@
         <flex blocked direction="column" align="right">
           <flex blocked align="between" class="desc">
             <span>进场动画</span>
+            <span>延迟毫秒</span>
             <span>出场动画</span>
           </flex>
-          <flex blocked align="between">
+          <flex blocked align="between" style="margin-bottom:20px;">
             <Select v-model="box1.enter" style="width:200px">
               <Option v-for="item in $store.state.demo.groups" :value="item" :key="item">{{ item }}</Option>
+            </Select>
+            <Select v-model="box1.delay" style="width:80px">
+              <Option v-for="item in $store.state.demo.delayList" :value="item" :key="item">{{ item }}ms</Option>
             </Select>
             <Select v-model="box1.leave" style="width:200px">
               <Option v-for="item in $store.state.demo.groups" :value="item" :key="item">{{ item }}</Option>
             </Select>
           </flex>
           <flex blocked align="right" direction="column">
-            <animation-group tag="div" :enter="box1.enter" :leave="box1.leave" style="width: 100%;" appear :delay="30">
+            <animation-group tag="div" :enter="box1.enter" :leave="box1.leave" style="width: 100%;" appear :delay="box1.delay">
               <flex blocked class="box box1" v-for="(item, index) in $store.state.demo.list1" :key="index" :data-index="index" :data-length="$store.state.demo.list1.length">
                 {{item.msg}}
               </flex>
@@ -29,18 +33,22 @@
         <flex blocked direction="column">
           <flex blocked align="between" class="desc">
             <span>进场动画</span>
+            <span>延迟毫秒</span>
             <span>出场动画</span>
           </flex>
-          <flex align="between" blocked>
+          <flex align="between" blocked style="margin-bottom:20px;">
             <Select v-model="box2.enter" style="width:200px">
               <Option v-for="item in $store.state.demo.groups" :value="item" :key="item">{{ item }}</Option>
+            </Select>
+            <Select v-model="box2.delay" style="width:80px">
+              <Option v-for="item in $store.state.demo.delayList" :value="item" :key="item">{{ item }}ms</Option>
             </Select>
             <Select v-model="box2.leave" style="width:200px">
               <Option v-for="item in $store.state.demo.groups" :value="item" :key="item">{{ item }}</Option>
             </Select>
           </flex>
           <flex blocked direction="column">
-            <animation-group tag="div" :enter="box2.enter" :leave="box2.leave" style="width: 100%;" appear :delay="30">
+            <animation-group tag="div" :enter="box2.enter" :leave="box2.leave" style="width: 100%;" appear :delay="box2.delay">
               <flex blocked class="box box2" v-for="(item, index) in $store.state.demo.list2" :key="index" :data-index="index" :data-length="$store.state.demo.list2.length">
                 {{item.msg}}
               </flex>
@@ -59,11 +67,13 @@
       return {
         box1: {
           enter: 'transition.bounceLeftIn',
-          leave: 'transition.bounceLeftOut'
+          leave: 'transition.bounceLeftOut',
+          delay: 20
         },
         box2: {
           enter: 'transition.bounceRightIn',
-          leave: 'transition.bounceRightOut'
+          leave: 'transition.bounceRightOut',
+          delay: 20
         }
       }
     },
