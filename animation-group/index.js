@@ -10,7 +10,8 @@ export default {
       type: [Number, Function],
       default: 0
     },
-    tag: String
+    tag: String,
+    mode: String
   },
   render(createElement) {
     const data = {};
@@ -26,9 +27,9 @@ export default {
       data.props.appear = true;
     }
     data.props.tag = this.tag;
-    data.props.mode = 'out-in';
     data.props.css = false;
     data.props.name = 'animation-group';
+    if (this.mode) data.props.mode = this.mode;
     return createElement('transition-group', data, this.$slots.default);
   }
 }

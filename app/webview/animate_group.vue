@@ -18,7 +18,7 @@
           </flex>
           <flex blocked align="right" direction="column">
             <animation-group tag="div" :enter="box1.enter" :leave="box1.leave" style="width: 100%;" appear :delay="30">
-              <flex blocked class="box box1" v-for="(item, index) in $store.state.demo.list1" :key="index" :data-index="index">
+              <flex blocked class="box box1" v-for="(item, index) in $store.state.demo.list1" :key="index" :data-index="index" :data-length="$store.state.demo.list1.length">
                 {{item.msg}}
               </flex>
             </animation-group>
@@ -41,7 +41,7 @@
           </flex>
           <flex blocked direction="column">
             <animation-group tag="div" :enter="box2.enter" :leave="box2.leave" style="width: 100%;" appear :delay="30">
-              <flex blocked class="box box2" v-for="(item, index) in $store.state.demo.list2" :key="index" :data-index="index">
+              <flex blocked class="box box2" v-for="(item, index) in $store.state.demo.list2" :key="index" :data-index="index" :data-length="$store.state.demo.list2.length">
                 {{item.msg}}
               </flex>
             </animation-group>

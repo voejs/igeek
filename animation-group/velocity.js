@@ -9,9 +9,11 @@ export default (name, delay) => {
     enter(el, done) {
       let _delay = delay;
       const index = el.dataset.index;
+      const length = el.dataset.length;
       if (index === undefined) throw new Error('[animation-group] children node miss `data-index`');
+      if (length === undefined) throw new Error('[animation-group] children node miss `data-length`');
       if (typeof _delay === 'function') {
-        _delay = _delay(index) || 0;
+        _delay = _delay(index, length) || 0;
       } else {
         _delay = _delay * index;
       }
@@ -24,11 +26,13 @@ export default (name, delay) => {
     leave(el, done) {
       let _delay = delay;
       const index = el.dataset.index;
+      const length = el.dataset.length;
       if (index === undefined) throw new Error('[animation-group] children node miss `data-index`');
+      if (length === undefined) throw new Error('[animation-group] children node miss `data-length`');
       if (typeof _delay === 'function') {
-        _delay = _delay(index) || 0;
+        _delay = _delay(index, length) || 0;
       } else {
-        _delay = _delay * index;
+        _delay = _delay * (length - index);
       }
       if (_delay > 0) {
         setTimeout(() => Velocity(el, name).then(done), _delay);
