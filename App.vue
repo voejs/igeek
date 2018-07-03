@@ -28,6 +28,7 @@
 <script>
   import Vue from 'vue';
   import iView from 'iview';
+  import 'animate.css';
   Vue.use(iView);
   export default {
     name: "app-main",

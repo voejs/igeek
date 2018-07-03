@@ -16,17 +16,17 @@ export default {
       id: 'animate',
       children: [
         {
-          icon: 'log-in',
-          name: '进入场景',
-          link: '/demo/in',
-          id: 'in'
+          icon: 'android-funnel',
+          name: 'Single Animation',
+          id: 'single',
+          link: '/animate/single/vue'
         },
         {
-          icon: 'log-out',
-          name: '退出场景',
-          link: '/demo/out',
-          id: 'out'
-        },
+          icon: 'android-options',
+          name: 'Animation Group',
+          id: 'group',
+          link: '/animate/group/vue'
+        }
       ]
     }
   ]

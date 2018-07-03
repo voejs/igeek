@@ -18,4 +18,12 @@ export default class DemoController extends Controller {
   outAnimate() {
     this.store.demo.commit('mode', 2);
   }
+  
+  inGroup() {
+    this.store.demo.commit('gmode', 1);
+  }
+  
+  outGroup() {
+    this.store.demo.commit('gmode', 2);
+  }
 }

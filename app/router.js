@@ -5,7 +5,11 @@ export default app => {
   router.get('/404', 'system.notFound');
   router.get('/500', 'system.catchError');
   
-  router.webview('/demo', 'demo');
-  router.get('/demo/in', middleware.nav('animate:in'), 'demo.inAnimate');
-  router.get('/demo/out', middleware.nav('animate:out'), 'demo.outAnimate');
+  router.webview('/animate/single', 'animateSingle');
+  router.get('/animate/single/vue', middleware.nav('animate:single'), 'demo.inAnimate');
+  router.get('/animate/single/animate', middleware.nav('animate:single'), 'demo.outAnimate');
+  
+  router.webview('/animate/group', 'animateGroup');
+  router.get('/animate/group/vue', middleware.nav('animate:group'), 'demo.inGroup');
+  router.get('/animate/group/animate', middleware.nav('animate:group'), 'demo.outGroup');
 }
